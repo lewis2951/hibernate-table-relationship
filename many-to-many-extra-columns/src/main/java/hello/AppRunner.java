@@ -190,7 +190,7 @@ public class AppRunner implements ApplicationRunner {
             return;
         }
 
-        book.setName(name + " (4th Edition)");
+        book.setName(name + " (5th Edition)");
     }
 
     /**
