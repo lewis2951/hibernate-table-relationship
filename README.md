@@ -9,7 +9,7 @@
 * JDK 1.8+
 * Intellij IDEA ce 2018.1
 * Maven 3.5.3
-* Spring Boot 2.0.1.RELEASE
+* Spring Boot 2.0.3.RELEASE
 * JPA
 * H2
 * Lombok
