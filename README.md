@@ -6,10 +6,10 @@
 
 所有工程基于以下技术：
 
-* JDK 1.8+
-* Intellij IDEA ce 2018.1
-* Maven 3.5.3
-* Spring Boot 2.0.4.RELEASE
+* JDK 1.8
+* Intellij IDEA ce 2018.3
+* Maven 3.6.0
+* Spring Boot 2.1.3.RELEASE
 * JPA
 * H2
 * Lombok
