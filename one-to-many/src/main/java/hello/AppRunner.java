@@ -45,16 +45,16 @@ public class AppRunner implements ApplicationRunner {
      * 显示
      */
     private void display() {
-        logger.info("Display all publishers & books ...");
+        System.out.println("Display all publishers & books ...");
 
-        publisherRepository.findAll().forEach(publisher -> logger.info(publisher.toString()));
+        publisherRepository.findAll().forEach(publisher -> System.out.println(publisher.toString()));
     }
 
     /**
      * 初始化
      */
     private void init() {
-        logger.info("Initial 2 publishers with 3 books ...");
+        System.out.println("Initial 2 publishers with 3 books ...");
 
         Publisher zx = new Publisher("中兴出版社");
         Book spring = new Book("Spring in Action", zx);
@@ -70,13 +70,13 @@ public class AppRunner implements ApplicationRunner {
      * @param name 出版社名
      */
     private void findByName(String name) {
-        logger.info("findByName [name:{}] ...", name);
+        System.out.println("findByName [name:{}] ...", name);
 
         Publisher publisher = publisherRepository.findByName(name);
         if (null == publisher) {
-            logger.info("Publisher [{}]", "<empty>");
+            System.out.println("Publisher [{}]", "<empty>");
         } else {
-            logger.info(publisher.toString());
+            System.out.println(publisher.toString());
         }
     }
 
@@ -86,16 +86,16 @@ public class AppRunner implements ApplicationRunner {
      * @param name 出版社名
      */
     private void findByNameContaining(String name) {
-        logger.info("findByNameContaining [name:{}] ...", name);
+        System.out.println("findByNameContaining [name:{}] ...", name);
 
-        publisherRepository.findByNameContaining(name).forEach(publisher -> logger.info(publisher.toString()));
+        publisherRepository.findByNameContaining(name).forEach(publisher -> System.out.println(publisher.toString()));
     }
 
     /**
      * 删除全部
      */
     private void deleteAll() {
-        logger.info("Delete all ...");
+        System.out.println("Delete all ...");
 
         publisherRepository.deleteAll();
     }

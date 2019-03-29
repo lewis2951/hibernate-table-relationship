@@ -111,17 +111,17 @@ public class AppRunner implements ApplicationRunner {
      * 显示
      */
     private void display() {
-        logger.info("Display all books & authors ...");
+        System.out.println("Display all books & authors ...");
 
-        bookRepository.findAll().forEach(book -> logger.info(book.toString()));
-        authorRepository.findAll().forEach(author -> logger.info(author.toString()));
+        bookRepository.findAll().forEach(book -> System.out.println(book.toString()));
+        authorRepository.findAll().forEach(author -> System.out.println(author.toString()));
     }
 
     /**
      * 初始化（方式一）
      */
     private void init() {
-        logger.info("Initial 2 books with 3 authors & 4 relationship ...");
+        System.out.println("Initial 2 books with 3 authors & 4 relationship ...");
 
         Author lewis = new Author("Lewis");
         Author mark = new Author("Mark");
@@ -140,7 +140,7 @@ public class AppRunner implements ApplicationRunner {
      * 初始化（方式二）
      */
     private void init2() {
-        logger.info("Initial 2 books with 3 authors & 4 relationship ...");
+        System.out.println("Initial 2 books with 3 authors & 4 relationship ...");
 
         Author lewis = new Author("Lewis");
         Author mark = new Author("Mark");
@@ -176,7 +176,7 @@ public class AppRunner implements ApplicationRunner {
      * 删除全部
      */
     private void deleteAllBooks() {
-        logger.info("Delete all books ...");
+        System.out.println("Delete all books ...");
 
         bookRepository.deleteAll();
     }
@@ -187,13 +187,13 @@ public class AppRunner implements ApplicationRunner {
      * @param name 书名
      */
     private void findBookByName(String name) {
-        logger.info("findBookByName [name:{}] ...", name);
+        System.out.println("findBookByName [name:{}] ...", name);
 
         Book book = bookRepository.findByName(name);
         if (null == book) {
-            logger.info("Book [{}]", "<empty>");
+            System.out.println("Book [{}]", "<empty>");
         } else {
-            logger.info(book.toString());
+            System.out.println(book.toString());
         }
     }
 
@@ -203,9 +203,9 @@ public class AppRunner implements ApplicationRunner {
      * @param name 书名
      */
     private void findBookByNameContaining(String name) {
-        logger.info("findBookByNameContaining [name:{}] ...", name);
+        System.out.println("findBookByNameContaining [name:{}] ...", name);
 
-        bookRepository.findByNameContaining(name).forEach(book -> logger.info(book.toString()));
+        bookRepository.findByNameContaining(name).forEach(book -> System.out.println(book.toString()));
     }
 
     /**
@@ -214,7 +214,7 @@ public class AppRunner implements ApplicationRunner {
      * @param name 书名
      */
     private void margeBook(String name) {
-        logger.info("margeBook [name:{}] ...", name);
+        System.out.println("margeBook [name:{}] ...", name);
 
         Book book = bookRepository.findByName(name);
         if (null == book) {
@@ -231,7 +231,7 @@ public class AppRunner implements ApplicationRunner {
      * @param name 书名
      */
     private void deleteBook(String name) {
-        logger.info("deleteBook [name:{}]", name);
+        System.out.println("deleteBook [name:{}]", name);
 
         Book book = bookRepository.findByName(name);
         if (null == book) {
@@ -248,7 +248,7 @@ public class AppRunner implements ApplicationRunner {
      * @param authorName 作者
      */
     private void plusAuthor(String bookName, String authorName) {
-        logger.info("plusAuthor [book.name:{}, author.name:{}] ...", bookName, authorName);
+        System.out.println("plusAuthor [book.name:{}, author.name:{}] ...", bookName, authorName);
 
         Book book = bookRepository.findByName(bookName);
         if (null == book) {
@@ -271,7 +271,7 @@ public class AppRunner implements ApplicationRunner {
      * @param bookName 书名
      */
     private void clearAuthor(String bookName) {
-        logger.info("clearAuthor [book.name:{}]", bookName);
+        System.out.println("clearAuthor [book.name:{}]", bookName);
 
         Book book = bookRepository.findByName(bookName);
         if (null == book) {
@@ -289,7 +289,7 @@ public class AppRunner implements ApplicationRunner {
      * @param authorName 作者
      */
     private void removeAuthor(String bookName, String authorName) {
-        logger.info("removeAuthor [book.name:{}, author.name:{}] ...", bookName, authorName);
+        System.out.println("removeAuthor [book.name:{}, author.name:{}] ...", bookName, authorName);
 
         Book book = bookRepository.findByName(bookName);
         if (null == book) {
@@ -311,7 +311,7 @@ public class AppRunner implements ApplicationRunner {
      * @param bookName 书名
      */
     private void removeAllAuthors(String bookName) {
-        logger.info("removeAllAuthors [book.name:{}]", bookName);
+        System.out.println("removeAllAuthors [book.name:{}]", bookName);
 
         Book book = bookRepository.findByName(bookName);
         if (null == book) {
@@ -328,7 +328,7 @@ public class AppRunner implements ApplicationRunner {
      * @param name 作者
      */
     private void deleteAuthor(String name) {
-        logger.info("deleteAuthor [name:{}] ...", name);
+        System.out.println("deleteAuthor [name:{}] ...", name);
 
         Author author = authorRepository.findByName(name);
         authorRepository.delete(author);
@@ -338,7 +338,7 @@ public class AppRunner implements ApplicationRunner {
      * 删除全部
      */
     private void deleteAllAuthors() {
-        logger.info("Delete all authors ...");
+        System.out.println("Delete all authors ...");
 
         authorRepository.deleteAll();
     }

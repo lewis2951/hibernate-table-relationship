@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.lewis.github</groupId>
-    <artifactId>many-to-many</artifactId>
+    <artifactId>one-to-one-shared-pk</artifactId>
     <version>1.0</version>
 
     <parent>

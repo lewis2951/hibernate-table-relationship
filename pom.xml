@@ -3,15 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.lewis.jpa</groupId>
-    <artifactId>spring-boot-jpa-h2</artifactId>
+    <groupId>org.lewis.github</groupId>
+    <artifactId>hibernate-table-relationship</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>single-table</module>
-        <module>one-to-one-shared-primary-key</module>
-        <module>one-to-one-foreign-key</module>
+        <module>simple</module>
+        <module>one-to-one</module>
+        <module>one-to-one-shared-pk</module>
         <module>one-to-many</module>
         <module>many-to-many</module>
         <module>many-to-many-extra-columns</module>
