@@ -16,7 +16,7 @@
 * JDK 1.8
 * Intellij IDEA ce 2018.3
 * Maven 3.6.0
-* Spring Boot 2.1.3.RELEASE
+* Spring Boot 2.1.4.RELEASE
 * Spring Data JPA, H2, Lombok
 
 ## 数据库
