@@ -6,10 +6,10 @@ public interface IBookService {
 
     void init();
 
-    void rename(Integer id, String name);
-
     void deleteAll();
     void delete(Integer id);
+
+    void rename(Integer id, String name);
 
     List<Book> findAll();
     Book find(String name);

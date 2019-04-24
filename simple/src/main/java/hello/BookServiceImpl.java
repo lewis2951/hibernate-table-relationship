@@ -23,14 +23,6 @@ public class BookServiceImpl implements IBookService {
     }
 
     @Override
-    public void rename(Integer id, String name) {
-        bookRepository.findById(id).ifPresent(book -> {
-            book.setName(name);
-            bookRepository.save(book);
-        });
-    }
-
-    @Override
     public void deleteAll() {
         bookRepository.deleteAll();
     }
@@ -38,6 +30,14 @@ public class BookServiceImpl implements IBookService {
     @Override
     public void delete(Integer id) {
         bookRepository.deleteById(id);
+    }
+
+    @Override
+    public void rename(Integer id, String name) {
+        bookRepository.findById(id).ifPresent(book -> {
+            book.setName(name);
+            bookRepository.save(book);
+        });
     }
 
     @Override

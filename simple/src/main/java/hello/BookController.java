@@ -1,6 +1,5 @@
 package hello;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +11,6 @@ public class BookController {
 
     private final IBookService bookService;
 
-    @Autowired
     public BookController(IBookService bookService) {
         this.bookService = bookService;
     }
@@ -20,12 +18,6 @@ public class BookController {
     @PostMapping("/init")
     public void init() {
         bookService.init();
-    }
-
-    @PostMapping("/rename")
-    public void rename(@RequestParam(name = "id") Integer id,
-                       @RequestParam(name = "name") String name) {
-        bookService.rename(id, name);
     }
 
     @PostMapping("/deleteAll")
@@ -36,6 +28,12 @@ public class BookController {
     @PostMapping("/delete")
     public void delete(@RequestParam(name = "id") Integer id) {
         bookService.delete(id);
+    }
+
+    @PostMapping("/rename")
+    public void rename(@RequestParam(name = "id") Integer id,
+                       @RequestParam(name = "name") String name) {
+        bookService.rename(id, name);
     }
 
     @PostMapping("/findAll")
