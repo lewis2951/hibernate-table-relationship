@@ -29,19 +29,19 @@ http://localhost:8080/findAll
 
 ## 按书名查找 精确查找
 http://localhost:8080/find
-    name: Spring Boot in Action
+    - name: Spring Boot in Action
 
 ## 按书名查找 模糊查找
 http://localhost:8080/find/like
-    name: in
+    - name: in
 
 ## 按书名查找 startsWith
 http://localhost:8080/find/startsWith
-    name: Spring
+    - name: Spring
 
 ## 按书名查找 模糊查找 & Top5
 http://localhost:8080/find/top5
-    name: in
+    - name: in
 ```
 
 ## 参考

@@ -1,4 +1,4 @@
-package hello;
+package hello.service;
 
 import org.junit.After;
 import org.junit.Before;
@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ApplicationTests {
+public class ServiceTests {
 
     @Autowired
     private IBookService bookService;
@@ -55,18 +55,18 @@ public class ApplicationTests {
     }
 
     @Test
-    public void like() {
-        assertThat(bookService.like("in")).isNotNull().hasSize(3);
-    }
-
-    @Test
     public void startsWith() {
         assertThat(bookService.startsWith("Spring")).isNotNull().hasSize(3);
     }
 
     @Test
-    public void findTop5() {
-        assertThat(bookService.findTop5("in")).isNotNull().hasSize(3);
+    public void like() {
+        assertThat(bookService.like("in")).isNotNull().hasSize(3);
+    }
+
+    @Test
+    public void likeTop5() {
+        assertThat(bookService.likeTop5("in")).isNotNull().hasSize(3);
     }
 
 }

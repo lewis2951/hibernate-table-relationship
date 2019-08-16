@@ -45,3 +45,20 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.format_sql=false
 spring.jpa.show-sql=true
 ```
+
+如需使用 H2 Web Console 访问数据库，配置如下：
+
+```properties
+## datasource settings
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.password=demo
+spring.datasource.url=jdbc:h2:mem:jpa-h2
+spring.datasource.username=demo
+## h2 web console settings
+spring.h2.console.enabled=true
+## jpa settings
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.format_sql=false
+spring.jpa.show-sql=true
+```

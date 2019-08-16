@@ -1,6 +1,9 @@
-package hello;
+package hello.service;
 
+import hello.entity.Book;
+import hello.repo.BookRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,6 +16,7 @@ public class BookServiceImpl implements IBookService {
         this.bookRepository = bookRepository;
     }
 
+    @Transactional
     @Override
     public void init() {
         deleteAll();
@@ -33,9 +37,9 @@ public class BookServiceImpl implements IBookService {
     }
 
     @Override
-    public void rename(Integer id, String name) {
+    public void rename(Integer id, String newName) {
         bookRepository.findById(id).ifPresent(book -> {
-            book.setName(name);
+            book.setName(newName);
             bookRepository.save(book);
         });
     }
@@ -51,17 +55,17 @@ public class BookServiceImpl implements IBookService {
     }
 
     @Override
-    public List<Book> like(String name) {
-        return bookRepository.findByNameContaining(name);
-    }
-
-    @Override
     public List<Book> startsWith(String name) {
         return bookRepository.findByNameStartsWith(name);
     }
 
     @Override
-    public List<Book> findTop5(String name) {
+    public List<Book> like(String name) {
+        return bookRepository.findByNameContaining(name);
+    }
+
+    @Override
+    public List<Book> likeTop5(String name) {
         return bookRepository.findTop5ByNameContaining(name);
     }
 
