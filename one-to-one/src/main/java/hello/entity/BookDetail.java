@@ -1,12 +1,7 @@
-package hello;
-
-import lombok.Getter;
-import lombok.Setter;
+package hello.entity;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
 @Entity(name = "BOOK_DETAIL")
 public class BookDetail {
 

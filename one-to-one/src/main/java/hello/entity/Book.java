@@ -1,12 +1,7 @@
-package hello;
-
-import lombok.Getter;
-import lombok.Setter;
+package hello.entity;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
 @Entity
 public class Book {
 
@@ -15,7 +10,10 @@ public class Book {
     private Integer id;
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "book")
+    //            (cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "book")
+    @OneToOne(cascade = CascadeType.PERSIST, mappedBy = "book", fetch = FetchType.LAZY)
+
+    @PrimaryKeyJoinColumn
     private BookDetail bookDetail;
 
     public Book() {
@@ -31,6 +29,7 @@ public class Book {
         super();
         this.name = name;
         this.bookDetail = bookDetail;
+        this.bookDetail.setBook(this);
     }
 
 }

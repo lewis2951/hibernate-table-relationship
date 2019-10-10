@@ -34,4 +34,5 @@ public class AppRunner implements ApplicationRunner {
         // delete all books
         bookRepository.deleteAll();
     }
+
 }

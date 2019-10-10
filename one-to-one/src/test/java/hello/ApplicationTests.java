@@ -1,5 +1,9 @@
 package hello;
 
+import hello.entity.Book;
+import hello.entity.BookDetail;
+import hello.repo.BookDetailRepository;
+import hello.repo.BookRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
